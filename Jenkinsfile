@@ -27,5 +27,10 @@ pipeline {
                 sh 'mvn clean install' 
             }
      }
+     stage('Static code analysis') { 
+            steps {
+                sh 'mvn clean verify sonar:sonar' 
+            }
+     }
 }
 }
