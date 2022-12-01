@@ -29,8 +29,7 @@ pipeline {
      }
      stage('Sonarqube analysis') { 
             steps {
-                
-                     sh 'mvn clean package sonar:sonar'  
+                mvn clean verify sonar:sonar -Dsonar.projectKey=DevopsProject -Dsonar.host.url=http:192.168.109.151:9000 -Dsonar.login = 5ca807a1504a9aa1b2831b618f98b802e30bca71
                }
      }
 }
