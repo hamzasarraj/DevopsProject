@@ -27,6 +27,15 @@ pipeline {
                 sh 'mvn clean install' 
             }
      }
+     stage("mvn Pckage") {
+            steps {
+                script {
+                    sh "mvn package -DskipTests=true"
+                }
+            }
+        }
+         
+    }
     }
 
 }
