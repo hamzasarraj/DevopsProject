@@ -7,11 +7,6 @@ pipeline {
                 
             }
         }
-         stage('prepare package') {
-            steps {
-                sh 'mvn prepare-package'
-            }
-        }
         stage('Clean Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
@@ -27,7 +22,7 @@ pipeline {
                 sh 'mvn verify -DskipTests' 
             }
      }
-     stage('Maven Build') { 
+     stage('Maven clean') { 
             steps {
                 sh 'mvn clean install' 
             }
