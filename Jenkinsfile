@@ -7,9 +7,9 @@ pipeline {
                 
             }
         }
-         stage('update maven') {
+         stage('prepare package') {
             steps {
-                sh 'mvn update'
+                sh 'mvn prepare-package'
             }
         }
         stage('Clean Build') {
