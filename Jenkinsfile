@@ -7,7 +7,7 @@ pipeline {
                 
             }
         }
-        stage('Clean Build') {
+        stage('Clean package') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
@@ -22,7 +22,7 @@ pipeline {
                 sh 'mvn verify -DskipTests' 
             }
      }
-     stage('Maven clean') { 
+     stage('Maven clean install') { 
             steps {
                 sh 'mvn clean install' 
             }
