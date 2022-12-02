@@ -7,6 +7,11 @@ pipeline {
                 
             }
         }
+         stage('update maven') {
+            steps {
+                sh 'mvn update'
+            }
+        }
         stage('Clean Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
