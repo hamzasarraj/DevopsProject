@@ -27,7 +27,14 @@ pipeline {
                 sh 'mvn clean install' 
             }
      }
-     stage("mvn Pckage") {
+       stage("SonarQube Analysis") {
+          agent any  
+           steps {
+                  sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=' 
+                  echo 'sonar static analysis done'
+           }
+         }
+     stage("mvn Package") {
             steps {
                 script {
                     sh "mvn package -DskipTests=true"
