@@ -30,7 +30,7 @@ pipeline {
        stage("SonarQube Analysis") {
           agent any  
            steps {
-                  sh ''mvn clean verify sonar:sonar -Dsonar.projectKey=Keypipeline -Dsonar.host.url=http://http://192.168.43.20:9000 -Dsonar.login=1359a62bebe49fb69d3d1c14cb2f739844f5deaa'
+                  sh ''mvn clean verify sonar:sonar -Dsonar.projectKey=Keypipeline -Dsonar.host.url=http:192.168.43.20:9000 -Dsonar.login=1359a62bebe49fb69d3d1c14cb2f739844f5deaa'
                   echo 'sonar static analysis done'
            }
          }
