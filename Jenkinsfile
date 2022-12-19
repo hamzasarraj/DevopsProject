@@ -45,6 +45,13 @@ pipeline {
                   repository: 'simpleapp-release', version: '1.0'
             }
         }
+        stage("Build Docker image") {
+            steps {
+                script {
+                    sh "docker build -t DEVOPPROJECT/tpAchatProject-1.0 ."
+                }
+            }
+        }
        
          
     }
