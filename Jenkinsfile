@@ -48,7 +48,7 @@ pipeline {
         stage("Build Docker image") {
             steps {
                 script {
-                    sh "docker build -t DEVOPPROJECT/tpAchatProject-1.0 ."
+                    sh "docker build -t devopsproject/tpAchatProject-1.0 ."
                 }
             }
         }
