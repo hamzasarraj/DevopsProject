@@ -42,7 +42,7 @@ pipeline {
                -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://http://192.168.43.20:8081/repository/maven-releases/ -Dfile=target/tpAchatProject-1.0.jar
             }
         }
-        }
+        
         stage("Build Docker image") {
             steps {
                 script {
@@ -53,6 +53,6 @@ pipeline {
        
          
     }
-    
+}
 
 
