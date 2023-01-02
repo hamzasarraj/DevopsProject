@@ -32,7 +32,7 @@ pipeline {
             steps {
                 script {
                     sh "mvn package -DskipTests=true"
-                }
+                }r
             }
         }
       stage("Upload Jar  To Nexus") {
