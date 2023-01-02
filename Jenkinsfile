@@ -51,7 +51,7 @@ pipeline {
             nexusUrl: 'http://192.168.43.20:8081', 
             nexusVersion: 'nexus3', 
             protocol: 'http', 
-            repository: 'deploymentRepo',  
+            repository: 'maven-releases',  
             version: '1.0' 
 
 
@@ -59,13 +59,7 @@ pipeline {
 
      } 
         
-        stage("Build Docker image") {
-            steps {
-                script {
-                    sh "docker build -t devopsproject/tpAchatProject-1.0 ."
-                }
-            }
-        }
+
        
          
     }
