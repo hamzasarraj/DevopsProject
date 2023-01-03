@@ -35,38 +35,15 @@ pipeline {
                 }
             }
         }
-       stage("Upload Jar  To Nexus") {
-            steps {  
-               nexusArtifactUploader artifacts: [ 
-                 [ 
-                    artifactId: 'tpAchatProject',  
-                      classifier: '',  
-                      file: 'target/tpAchatProject-1.0.jar',   
-                      type: 'jar' 
-                   ]  
-
-            ],  
-            credentialsId: 'nexus3', 
-            groupId: 'com.esprit.examen', 
-            nexusUrl: 'http://192.168.43.20:8081', 
-            nexusVersion: 'nexus3', 
-            protocol: 'http', 
-            repository: 'deploymentRepo',  
-            version: '1.0' 
-
-
-        }  
-
-     } 
-
-        
-        stage("Build Docker image") {
+       stage("Nexus Deploy") {
             steps {
                 script {
-                    sh "docker build -t devopsproject/tpAchatProject-1.0 ."
+                    sh "mvn clean package deploy:deploy -DgroupId=com.esprit.examen -DartifactId=tpAchatProject -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://http://http://192.168.43.20:8081/repository/maven-releases/ -Dfile=target/tpAchatProject-1.0.jar"
                 }
             }
         }
+        
+
        
          
     }
