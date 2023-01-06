@@ -62,7 +62,7 @@ pipeline {
         stage("docker build") {
                        steps{
                          script {
-                            sh "docker build -t hamza1991/tpachat:1.0"
+                            sh "docker build -t hamza1991/tpachat:1.0 ."
                        }
                  }
        }
