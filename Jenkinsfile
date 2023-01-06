@@ -66,21 +66,6 @@ pipeline {
                        }
                  }
        }
-       stage("docker push") {
-              steps{
-                 script {
-                 docker.withRegistry( '', registryCredential ) {
-                  dockerImage.push()
-    }
-    }
-   }
-}
-    stage('Cleaning up') {
-             steps{
-             sh "docker rmi $registry:$BUILD_NUMBER"
-}
-}
-    
        
          
     }
