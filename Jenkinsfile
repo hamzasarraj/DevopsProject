@@ -58,10 +58,11 @@ pipeline {
         }  
 
      } 
-stage("docker build") {
+    
+        stage("docker build") {
                        steps{
                          script {
-                            dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                            sh "docker build -t hamza1991/tpachat:1.0"
                        }
                  }
        }
