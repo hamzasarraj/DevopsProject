@@ -4,6 +4,9 @@ pipeline {
       registryCredential='hamza-dockerhub'
       dokerImage="tpachatprojctbackend"
  } 
+  environment {
+        PATH = "$PATH:/usr/local/bin"
+      }
     agent any
     stages {
         stage('Git Checkout') {
