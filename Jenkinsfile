@@ -1,4 +1,9 @@
 pipeline {
+    environment{
+      registry="hamza1991/tpachatprojctbackend"
+      registryCredential='	darinpope-dockerhub'
+      dokerImage="tpachatprojctbackend"
+ } 
     agent any
     stages {
         stage('Git Checkout') {
@@ -66,6 +71,15 @@ pipeline {
                        }
                  }
        }
+       stage("docker push") {
+         steps{
+              script {
+                docker.withRegistry( '', registryCredential ) {
+               dockerImage.push()
+             }
+           }
+       }
+      }   
        
          
     }
