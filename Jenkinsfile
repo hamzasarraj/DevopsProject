@@ -71,16 +71,12 @@ pipeline {
                        }
                  }
        }
-       stage("DockerHub login ") {
-              steps{
-                  sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u hamza1991 -p Hamzasarrajoacaatc'
-            }
-          }
+       
        stage("docker push") {
          steps{
               script {
                 docker.withRegistry( '', registryCredential ) {
-               dockerImage.push()
+                dockerImage.push()
              }
            }
        }
