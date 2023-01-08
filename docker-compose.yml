@@ -5,7 +5,7 @@ services:
     container_name: database
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: tpachato
+      MYSQL_DATABASE: projetdatabase
     ports:
       - 3307:3306 
   spring-boot:
