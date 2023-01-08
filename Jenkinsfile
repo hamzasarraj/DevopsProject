@@ -3,10 +3,10 @@ pipeline {
       registry="hamza1991/tpachatprojctbackend"
       registryCredential='hamza-dockerhub'
       dokerImage="tpachatprojctbackend"
+      PATH = "$PATH:/usr/local/bin"
+
  } 
-  environment {
-        PATH = "$PATH:/usr/local/bin"
-      }
+ 
     agent any
     stages {
         stage('Git Checkout') {
