@@ -9,7 +9,7 @@ services:
     ports:
       - 3307:3306 
   spring-boot:
-    image: hamza1991/tpachatprojctbackend
+    image: hamza1991/tpachatprojctbackend:latest
     container_name: spring
     ports:
       - 8089:8089
